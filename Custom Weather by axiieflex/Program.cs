@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Ensage;
 using Ensage.Common;
@@ -9,7 +9,7 @@ namespace axiieflex.ensage2.CustomWeather
     class Program
     {
         private static bool _initialized = false;
-        private static readonly Menu Menu = new Menu("Погода", "Погода", true);
+        private static readonly Menu Menu = new Menu("Pogoda", "Pogoda", true);
 
         // http://dota2.gamepedia.com/Weather
         // Weather Default 0
@@ -23,9 +23,9 @@ namespace axiieflex.ensage2.CustomWeather
         // Weather Snow 1
         // Weather Spring 7
         private enum Weather {
-            Стандарт         = 0,
-            Снег            = 1,
-            Дождь            = 2,
+            Standart         = 0,
+            Sneg            = 1,
+            Rain           = 2,
             Moonbeam        = 3,
             Pestilence      = 4,
             Harvest         = 5,
@@ -40,7 +40,7 @@ namespace axiieflex.ensage2.CustomWeather
 
             MenuItem item;
 
-            item = new MenuItem("Погода", "Выбрано").SetValue(new StringList(new[] { 
+            item = new MenuItem("Pogoda", "Selected").SetValue(new StringList(new[] { 
                         Weather.Default.ToString(), 
                         Weather.Snow.ToString(),
                         Weather.Rain.ToString(),
@@ -81,7 +81,7 @@ namespace axiieflex.ensage2.CustomWeather
             }
             
             _initialized = true;
-            var t = Menu.Item("Погода").GetValue<StringList>().SelectedIndex;
+            var t = Menu.Item("Pogoda").GetValue<StringList>().SelectedIndex;
             var var = Game.GetConsoleVar("cl_weather");
             var.RemoveFlags(ConVarFlags.Cheat);
             var.SetValue(t);
