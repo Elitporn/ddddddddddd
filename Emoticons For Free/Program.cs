@@ -100,7 +100,7 @@ namespace Emoticons_For_Free
                 Menu.Item("yposition").SetValue<Slider>(new Slider((int)startloc.Y, 1, (int)HUDInfo.ScreenSizeY()));
             }
             Drawing.DrawRect(loc, new Vector2(w, h), new Color(0,0,0,150));
-            Drawing.DrawText("Бесплатные смайлики от Сашки", loc + new Vector2(103, 2), Color.White,
+            Drawing.DrawText("Бесплатные смайлики", loc + new Vector2(103, 2), Color.White,
                     FontFlags.AntiAlias | FontFlags.DropShadow);
         }
 
@@ -114,7 +114,7 @@ namespace Emoticons_For_Free
             }
             var newColor = isIn ? (_leftMouseIsPress ? new Color(0, 0, 0, 200) : new Color(0, 0, 0, 100) ): new Color(0, 0, 0, 150);
             Drawing.DrawRect(loc, new Vector2(w, h), newColor);
-            Drawing.DrawText((clicked ? "To Team" : "To All"), loc + new Vector2(130, 2), Color.White,
+            Drawing.DrawText((clicked ? "Команде" : "Всем"), loc + new Vector2(130, 2), Color.White,
                     FontFlags.AntiAlias | FontFlags.DropShadow);
         }
         private static void DrawMinButton(Vector2 loc, float w, float h, ref bool clicked)
